@@ -8,4 +8,4 @@ This is a simple theme for TaskPaper with styles for the following tags:
 
 ## Preview
 
-![TaskPaper with Kustom theme](https://github.com/kcmr/kustom-taskpaper-theme/blob/master/preview.png)
+![TaskPaper with Kustom theme](https://github.com/kcmr/kustom-taskpaper-theme/blob/master/kustom-taskpaper-theme-preview.png)
