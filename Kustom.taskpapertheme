@@ -1,0 +1,113 @@
+<theme>
+	<!-- 
+
+    http://www.touch-code-magazine.com/web-color-to-uicolor-convertor/
+
+	white         [UIColor colorWithRed:0.992 green:0.996 blue:1 alpha:1]     /*#fdfeff*/
+	done          [UIColor colorWithRed:0.659 green:0.659 blue:0.659 alpha:1] /*#a8a8a8*/
+	note          [UIColor colorWithRed:0.318 green:0.318 blue:0.318 alpha:1] /*#515151*/
+	task          [UIColor colorWithRed:0.333 green:0.333 blue:0.333 alpha:1] /*#555555*/
+	orange        [UIColor colorWithRed:0.827 green:0.447 blue:0.078 alpha:1] /*#d37214*/
+	red           [UIColor colorWithRed:0.827 green:0.145 blue:0.078 alpha:1] /*#d32514*/
+	green         [UIColor colorWithRed:0.486 green:0.675 blue:0.027 alpha:1] /*#7cac07*/
+    green light   [UIColor colorWithRed:0.941 green:0.965 blue:0.886 alpha:1] /*#f0f6e2*/
+	project bg    [UIColor colorWithRed:0.949 green:0.949 blue:0.949 alpha:1] /*#f2f2f2*/
+    red light     [UIColor colorWithRed:0.969 green:0.863 blue:0.863 alpha:1] /*#f7dcdc*/ 
+    orange light  [UIColor colorWithRed:0.969 green:0.918 blue:0.863 alpha:1] /*#f7eadc*/ 
+		
+	-->
+	
+	<color id="white" red="0.992" green="0.996" blue="1" alpha="1"/> 
+	<color id="black" red="0" green="0" blue="0" alpha="1"/>
+
+    <!-- 4 shades of grey :P -->
+	<color id="done" red="0.659" green="0.659" blue="0.659" alpha="1"/> <!-- done, tag -->
+	<color id="note" red="0.318" green="0.318" blue="0.318" alpha="1"/> 
+	<color id="task" red="0.333" green="0.333" blue="0.333" alpha="1"/> 
+	<color id="project-bg" red="0.949" green="0.949" blue="0.949" alpha="1"/> 
+
+	<color id="orange" red="0.827" green="0.447" blue="0.078" alpha="1"/>
+    <color id="orange-light" red="0.969" green="0.918" blue="0.863" alpha="1" />
+
+    <color id="red" red="0.827" green="0.145" blue="0.078" alpha="1"/>
+    <color id="red-light" red="0.969" green="0.863" blue="0.863" alpha="1" />
+
+    <color id="green" red="0.486" green="0.675" blue="0.027" alpha="1"/>
+    <color id="green-light" red="0.941" green="0.965" blue="0.886" alpha="1"/>
+
+
+	<!-- Window Style -->
+	<color id="foreground" extendsColorID="black" />
+	<color id="background" extendsColorID="white" />
+	<window foregroundColorID="foreground" backgroundColorID="background" shouldUseHUDScrollers="yes" />
+
+	<!-- Text View Style -->
+	<color id="tag" extendsColorID="done" />
+	<color id="handle" extendsColorID="black" />
+	<color id="insertionPoint" extendsColorID="black" />
+	<font id="base" name="LucidaGrande" size="13" />
+	<characterStyle id="base" fontID="base" foregroundColorID="foreground" />
+	<paragraphStyle id="base" paragraphSpacing="4" paragraphSpacingBefore="4" lineSpacing="1" lineHeightMultiple="1" alignment="NSLeftTextAlignment" />
+	<textView
+		shouldAntialiasText="yes"
+		shouldShowNoteHandles="no"
+		shouldShowProjectHandles="yes"
+		defaultCharacterStyleID="base"
+		insertionPointColorID="insertionPoint"
+		selectionColorID="selection"
+		handleColorID="handle"
+		tagColorID="tag"
+	/>
+
+	<!-- Task style. This section defines the styles that are applied to task lines. -->
+	<color id="task" extendsColorID="black" />
+	<font id="task" extendsFontID="base" />
+	<characterStyle id="task" fontID="task" foregroundColorID="task" />
+	<entryRule matchesQuery="type = task" lineCharacterStyleID="task" paragraphStyleID="base" />
+
+	<!-- Project style. This section defines the styles that are applied to project lines. -->
+	<color id="project" extendsColorID="black" />
+	<font id="project" size="14" />
+	<characterStyle id="project" fontID="project" foregroundColorID="project" />
+	<paragraphStyle id="project" extendsParagraphStyleID="base" paragraphSpacingBefore="0" paragraphSpacing="4" />
+	<entryRule matchesQuery="type = &quot;project&quot;" lineCharacterStyleID="project" paragraphStyleID="project" />
+
+	<!-- Note style. This section defines the styles that are applied to note lines. -->
+	<color id="note" extendsColorID="note" />
+	<characterStyle id="note" foregroundColorID="note" />
+	<entryRule matchesQuery="type = note" lineCharacterStyleID="note" paragraphStyleID="base" />
+
+	<!-- GroupHeader style. This section defines the styles that are applied to groupHeader lines. (top level projects) -->
+	<color id="groupHeader" extendsColorID="black" />
+	<font id="groupHeader" name="LucidaGrande-Bold" size="16" />
+	<characterStyle id="groupHeader" fontID="groupHeader" foregroundColorID="groupHeader" backgroundColorID="project-bg" />
+	<paragraphStyle id="groupHeader" extendsParagraphStyleID="base" paragraphSpacingBefore="20" paragraphSpacing="20" />
+	<entryRule matchesQuery="isgroupheader" paragraphStyleID="groupHeader" lineCharacterStyleID="groupHeader" />
+	
+	<!-- @done style. This section defines the styles that are applied to lines tagged with @done. -->
+	<color id="done" extendsColorID="done" />
+	<characterStyle id="done" foregroundColorID="done" strikethroughStyle="NSUnderlineStyleSingle" />
+	<entryRule matchesQuery="@done" contentCharacterStyleID="done" />
+
+	<!-- @hl style. This section defines the styles that are applied to lines tagged with @hl. -->
+	<color id="orange" extendsColorID="orange" />
+    <gradient id="orange-light" startColorID="orange-light" endColorID="orange-light" angle="90" />
+	<characterStyle id="orange" foregroundColorID="orange" />
+    <backgroundStyle id="orange-light" fillGradientID="orange-light" shadowID="NULL" afterPositioningGrowWidthBy="20" afterPositioningGrowHeightBy="8.5" />
+	<entryRule matchesQuery="@hl" lineCharacterStyleID="orange" backParagraphBackgroundStyleID="orange-light" /> 
+
+	<!-- @waiting style. This section defines the styles that are applied to lines tagged with @waiting. -->
+	<characterStyle id="waiting" foregroundColorID="red" />
+    <gradient id="red-light" startColorID="red-light" endColorID="red-light" angle="90" />
+    <backgroundStyle id="red-light" fillGradientID="red-light" shadowID="NULL" afterPositioningGrowWidthBy="20" afterPositioningGrowHeightBy="8.5" />
+	<entryRule matchesQuery="@waiting or @high" lineCharacterStyleID="waiting" backParagraphBackgroundStyleID="red-light" />
+
+	<!-- @focus style. This section defines the styles that are applied to lines tagged with @focus. -->
+	<font id="focus" name="LucidaGrande-Bold" size="13" />
+    <gradient id="focus" startColorID="green-light" endColorID="green-light" angle="90" />
+    <characterStyle id="focus" foregroundColorID="green" fontID="focus" />
+    <backgroundStyle id="focus" fillGradientID="focus" shadowID="NULL" afterPositioningGrowWidthBy="20" afterPositioningGrowHeightBy="8.5" />
+    <entryRule matchesQuery="@today or @focus or @star" lineCharacterStyleID="focus" backParagraphBackgroundStyleID="focus" />
+
+
+</theme>
