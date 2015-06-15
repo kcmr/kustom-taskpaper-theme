@@ -102,6 +102,10 @@
     <backgroundStyle id="red-light" fillGradientID="red-light" shadowID="NULL" afterPositioningGrowWidthBy="20" afterPositioningGrowHeightBy="8.5" />
 	<entryRule matchesQuery="@waiting or @high" lineCharacterStyleID="waiting" backParagraphBackgroundStyleID="red-light" />
 
+	<!-- @bug style. This section defines the styles that are applied to lines tagged with @bug. -->
+	<characterStyle id="bug" foregroundColorID="red" />
+	<entryRule matchesQuery="@bug" lineCharacterStyleID="bug" />
+
 	<!-- @focus style. This section defines the styles that are applied to lines tagged with @focus. -->
 	<font id="focus" name="LucidaGrande-Bold" size="13" />
     <gradient id="focus" startColorID="green-light" endColorID="green-light" angle="90" />
